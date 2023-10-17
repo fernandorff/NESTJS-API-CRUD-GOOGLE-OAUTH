@@ -10,6 +10,8 @@ import { EmployeeRoleModule } from './domains/employee-role/employee-role.module
 import { EmployeeSectorModule } from './domains/employee-sector/employee-sector.module';
 import { SectorModule } from './domains/sector/sector.module';
 import { RoleModule } from './domains/role/role.module';
+import 'dotenv/config';
+
 
 const cookieSession = require('cookie-session');
 
