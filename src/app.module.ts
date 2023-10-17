@@ -15,10 +15,6 @@ const cookieSession = require('cookie-session');
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: `.env.${process.env.NODE_ENV}`,
-    }),
     TypeOrmModule.forRootAsync({
       useFactory: () => ({
         type: 'postgres',
