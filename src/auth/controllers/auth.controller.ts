@@ -21,7 +21,7 @@ export class AuthController {
 
   @Get('/ip')
   @ApiOperation({ summary: 'Sign in with registered users.' })
-  async signIn(@Ip() ip, @Req() req) {
+  async ip(@Ip() ip, @Req() req) {
     return {ip, req}
   }
 
