@@ -3,7 +3,7 @@ import {
   Get,
   Req,
   Res,
-  UseGuards
+  UseGuards, Ip
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -18,6 +18,12 @@ export class AuthController {
   @ApiOperation({ summary: 'Sign in with registered users.' })
   @UseGuards(AuthGuard('google'))
   async signIn() { }
+
+  @Get('/ip')
+  @ApiOperation({ summary: 'Sign in with registered users.' })
+  async signIn(@Ip ip, @Req req) {
+    return {ip, req}
+  }
 
   @Get('google/redirect')
   @UseGuards(AuthGuard('google'))
