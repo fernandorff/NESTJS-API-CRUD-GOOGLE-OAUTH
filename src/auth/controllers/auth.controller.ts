@@ -31,7 +31,8 @@ export class AuthController {
     const { headers, ip, method, url } = req;
     const extractedInfo = { headers, ip, method, url };
     console.log(extractedInfo)
-    return headers['x-forwarded-for'];
+    console.log(headers['x-forwarded-for'] || headers['x-envoy-external-address'])
+    return headers['x-forwarded-for'] || headers['x-envoy-external-address'];
   }
 
   @Get('google/redirect')
