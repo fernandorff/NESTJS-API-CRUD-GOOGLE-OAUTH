@@ -21,8 +21,14 @@ export class AuthController {
 
   @Get('/ip')
   @ApiOperation({ summary: 'Sign in with registered users.' })
-  async ip(@Ip() ip, @Req() req) {
-    return {ip, req}
+  async ip(@Ip() ip) {
+    return ip
+  }
+
+  @Get('/req')
+  @ApiOperation({ summary: 'Sign in with registered users.' })
+  async req(@Req() req) {
+    return req
   }
 
   @Get('google/redirect')
