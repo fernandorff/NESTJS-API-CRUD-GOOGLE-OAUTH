@@ -28,7 +28,10 @@ export class AuthController {
   @Get('/req')
   @ApiOperation({ summary: 'Sign in with registered users.' })
   async req(@Req() req) {
-    return req
+    const { headers, ip, method, url } = req;
+    const extractedInfo = { headers, ip, method, url };
+    console.log(extractedInfo)
+    return extractedInfo;
   }
 
   @Get('google/redirect')
